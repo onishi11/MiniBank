@@ -19,7 +19,9 @@
             <span th:text="${amount}"></span>
         </h4>
         
-        <div th:each="user : ${userList}"></div>
+        <div th:each="user : ${userList}">
+            <div th:text="${user}"></div>
+        </div>
     </section>
 
     
