@@ -13,21 +13,10 @@ import lombok.NoArgsConstructor;
 @Table(name="users")
 @NoArgsConstructor
 public class UserModel {
-/*| id                  |
-| username            |
-| password            |
-| role                |
-| created_at          |
-| updated_at          |
-| USER                |
-| CURRENT_CONNECTIONS |
-| TOTAL_CONNECTIONS   |
-| id                  |
-| name                |
-| password */
+
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	private String username;
 	private String password;
 

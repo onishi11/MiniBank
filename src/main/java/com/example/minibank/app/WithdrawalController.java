@@ -5,17 +5,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.minibank.form.LoginForm;
+import com.example.minibank.form.WithdrawalForm;
 
 @Controller
 @RequestMapping("/withdrawal")
 public class WithdrawalController {
 
 	@GetMapping
-	public String login(@ModelAttribute LoginForm loginForm) {
+	public String login(@ModelAttribute WithdrawalForm withdrawalForm) {
 		
 		
-		return "login";
+		return "withdrawal";
 		
 	}
 	

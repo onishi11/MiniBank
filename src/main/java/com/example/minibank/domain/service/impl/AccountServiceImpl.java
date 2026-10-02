@@ -26,14 +26,20 @@ public class AccountServiceImpl implements AccountService{
 	@Override
 	public AccountModel getAccountByUserId(int userId) {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		AccountModel account = accountRepository.getAccountByUserId(userId);
+		return account;
 	}
 
 	@Override
 	public BigDecimal getBalanceByUserId(int userId) {
 		// TODO 自動生成されたメソッド・スタブ
-		return accountRepository.getBalanceByUserId(userId);
+		AccountModel account = accountRepository.getAccountByUserId(userId);
+		return account.getBalance();
+		
 	}
+
+	
+	
 
 
 	

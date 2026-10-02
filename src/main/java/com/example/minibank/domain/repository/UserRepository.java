@@ -7,5 +7,5 @@ import com.example.minibank.domain.model.UserModel;
 public interface UserRepository extends JpaRepository<UserModel, Integer>{
 
 	UserModel findUserByUsername(String username);
-	
+
 }

@@ -8,3 +8,6 @@ Spring Security(CSRF, 認証・認可, セッション管理),
 Spring AOP(Aspect) → 監査ログ,
 Bean Validation,
 Transaction,
+
+前提：
+・1つのユーザーにつき1つの口座を持つこととする

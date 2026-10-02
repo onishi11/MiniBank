@@ -21,11 +21,18 @@ public class UserServiceImpl implements UserService{
 		// TODO 自動生成されたメソッド・スタブ
 		return userRepository.findAll();
 	}
-
 	@Override
-	public UserModel getUyById(int userId) {
+	public UserModel getUserModelById(int userId) {
 		// TODO 自動生成されたメソッド・スタブ
 		return null;
+	}
+
+	@Override
+	public int getUserIdByUsername(String username) {
+		// TODO 自動生成されたメソッド・スタブ
+		UserModel user = userRepository.findUserByUsername(username);
+		int userId = user.getId();
+		return userId;
 	}
 
 	

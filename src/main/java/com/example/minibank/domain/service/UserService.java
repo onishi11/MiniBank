@@ -8,6 +8,8 @@ public interface UserService {
 
 	public List<UserModel> getAll();
 
-	public UserModel getUyById(int userId);
+	public UserModel getUserModelById(int userId);
+	
+	public int getUserIdByUsername(String username);
 
 }

@@ -1,5 +1,7 @@
 package com.example.minibank.form;
 
+import java.math.BigDecimal;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -8,7 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class DepositForm {
 
-	private String username;
-	private String password;
+	private BigDecimal amount;
 	
 }

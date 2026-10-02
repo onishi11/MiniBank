@@ -1,4 +1,4 @@
-package com.example.minibank.domain.service.impl;
+package com.example.minibank.authentication.service;
 
 import java.util.Optional;
 

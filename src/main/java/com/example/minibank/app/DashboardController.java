@@ -24,10 +24,11 @@ public class DashboardController {
 	private final AccountService accountService;
 
 	@GetMapping
-	public String login(@ModelAttribute LoginForm loginForm, Model model,
+	public String showDashboard(@ModelAttribute LoginForm loginForm, Model model,
 			@AuthenticationPrincipal UserDetails userDetails) {
 
-		model.addAttribute("balance", accountService.getBalanceByUserId(0));
+		int userId = userService.getUserIdByUsername(userDetails.getUsername());
+		model.addAttribute("balance", accountService.getBalanceByUserId(userId));
 		model.addAttribute("username", userDetails.getUsername());
 		return "dashboard";
 

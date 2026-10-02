@@ -2,11 +2,18 @@
 <html xmlns="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>ログイン</title>
+<title>出金</title>
 </head>
 <body>
 
-hello
+    <form th:object="${withdrawalForm}" th:action="@{/withdrawal}" th:method="post">
+        <div>
+            出金額：<input th:field="*{amount}">
+        </div>
+        <div>
+            <input type="submit" value="出金する">
+        </div>
+    </form>
     
 </body>
 </html>

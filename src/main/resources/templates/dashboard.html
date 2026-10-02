@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org"
-          xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-          layout:decorate="~{layout}">
+<html xmlns="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
+
 <head>
-<meta charset="UTF-8">
-<title>ログイン</title>
+    <meta charset="UTF-8">
+    <title>ログイン</title>
 </head>
+
 <body>
 
     <section layout:fragment="content">
@@ -13,17 +14,35 @@
         <h3>
             ようこそ <span th:text="${username}"></span>さん
         </h3>
-        
+
         <h4>
             <p>残高</p>
-            <span th:text="${amount}"></span>
+            <span th:text="${balance}"></span>
         </h4>
-        
+
         <div th:each="user : ${userList}">
             <div th:text="${user}"></div>
         </div>
+
+        <div>
+            <a href="/deposit">入金</a>
+        </div>
+        <div>
+            <a href="/withdrawal">出金</a>
+        </div>
+        <div>
+            <a href="/transfer">送金</a>
+        </div>
+        <div>
+            <a href="#">入出金履歴</a>
+        </div>
+        <br>
+        <div>
+            <a href="#">ログアウト</a>
+        </div>
     </section>
 
-    
+
 </body>
+
 </html>
