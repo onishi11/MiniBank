@@ -8,6 +8,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import com.example.minibank.exception.IllegalAmountException;
+import com.example.minibank.exception.InsufficientBalanceException;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,6 +19,41 @@ import lombok.NoArgsConstructor;
 @Table(name="accounts")
 @NoArgsConstructor
 public class AccountModel {
+	
+	public void deposit(BigDecimal amount) {
+	
+		if(amount.compareTo(BigDecimal.ZERO) == 0 || amount.compareTo(BigDecimal.ZERO) < 0) {
+			
+			throw new IllegalAmountException("金額が不正です");
+			
+		}
+		
+		this.balance = this.balance.add(amount);
+		
+	}
+	
+	public void withdrawal(BigDecimal amount) {
+		
+
+		if(amount.compareTo(BigDecimal.ZERO) <= 0) {
+			
+			throw new IllegalAmountException("金額が不正です");
+			
+		}
+		
+		if(amount.compareTo(this.balance) >= 0) {
+			
+			
+			throw new InsufficientBalanceException("残高が不足しています");
+		} else {
+			
+			this.balance = this.balance.subtract(amount);
+			
+		}
+		
+		
+		
+	}
 
 	@Id
 	@GeneratedValue

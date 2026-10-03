@@ -30,6 +30,7 @@ public class DashboardController {
 		int userId = userService.getUserIdByUsername(userDetails.getUsername());
 		model.addAttribute("balance", accountService.getBalanceByUserId(userId));
 		model.addAttribute("username", userDetails.getUsername());
+		
 		return "dashboard";
 
 	}

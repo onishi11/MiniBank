@@ -3,9 +3,11 @@ package com.example.minibank.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableWebSecurity
 public class LoginFormConfig {
 
 	//自作ログイン画面に対して遷移する設定
@@ -18,9 +20,16 @@ public class LoginFormConfig {
 					.defaultSuccessUrl("/dashboard", true)
 					.permitAll()
 					)
+			.logout(logout -> logout
+				.logoutUrl("/logout")
+				.logoutSuccessUrl("/login?logout")
+				.invalidateHttpSession(true)
+				.clearAuthentication(true)
+					)
 			.authorizeHttpRequests(authz -> authz
 					.anyRequest().authenticated()
 					);
+			
 		
 		return http.build();
 

@@ -21,6 +21,7 @@ public class EventListeners {
 		
 		log.info("認証失敗　ユーザーネーム：{}", event.getAuthentication().getName());
 		
+		
 	}
 	@EventListener
 	public void handleSuccessCredentials(
@@ -30,5 +31,7 @@ public class EventListeners {
 		log.info("認証成功　ユーザーネーム：{}", event.getAuthentication().getName());
 		
 	}
+	
+	
 	
 }

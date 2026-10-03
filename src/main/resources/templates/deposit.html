@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns="http://www.thymeleaf.org">
+<html xmlns="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{layout}">
 
 <head>
     <meta charset="UTF-8">
@@ -7,15 +8,31 @@
 </head>
 
 <body>
+    
+    <section layout:fragment="content">
+        
+
 
     <form th:object="${depositForm}" th:action="@{/deposit}" th:method="post">
+        <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}">
+            
+        </p>
         <div>
             入金額：<input th:field="*{amount}">
+        </div>
+
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">
+                    
+        </p>
+        <div>
+            備考：<textarea th:field="*{description}"></textarea>
         </div>
         <div>
             <input type="submit" value="入金する">
         </div>
     </form>
+        
+    </section>
 
 </body>
 

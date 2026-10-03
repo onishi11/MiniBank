@@ -38,7 +38,9 @@
         </div>
         <br>
         <div>
-            <a href="#">ログアウト</a>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="ログアウト">
+            </form>
         </div>
     </section>
 

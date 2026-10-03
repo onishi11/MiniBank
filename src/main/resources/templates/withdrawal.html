@@ -6,9 +6,19 @@
 </head>
 <body>
 
+    <p th:if="${errorMsg}" th:text="${errorMsg}">
+        
+    </p>
+    
     <form th:object="${withdrawalForm}" th:action="@{/withdrawal}" th:method="post">
+        <p th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></p>
         <div>
             出金額：<input th:field="*{amount}">
+        </div>
+
+        <p th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></p>
+        <div>
+            備考：<textarea th:field="*{description}"></textarea>
         </div>
         <div>
             <input type="submit" value="出金する">

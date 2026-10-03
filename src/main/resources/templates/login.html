@@ -6,6 +6,9 @@
 </head>
 <body>
 
+    <div th:if="${errorMsg}">
+        <p th:text="${errorMsg}"></p>
+    </div>
     <form th:object="${loginForm}" th:action="@{/login}" method="post">
         
         <div>
